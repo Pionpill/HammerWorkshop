@@ -1,0 +1,12 @@
+{
+  "CodeGPT.apiKey": "CodeGPT Plus Beta",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+    "source.fixAll.eslint": "always"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.tabWidth": 2,
+  "editor.tabSize": 2,
+  "cSpell.words": ["Tencentqq"]
+}
