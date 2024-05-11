@@ -14,9 +14,9 @@
 
 /* 黑色主题 */
 .theme-dark {
-  --color-background-primary: #1e1e1e;
+  --color-background-primary: #353535;
   --color-background-secondary: #252525;
-  --color-background-thirdly: #2d2d2d;
+  --color-background-thirdly: #151515;
   --color-text-primary: #ffffff;
   --color-text-secondary: #b3b3b3;
   --color-text-thirdly: #808080;
