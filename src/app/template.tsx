@@ -17,11 +17,11 @@ const RootTemplate: React.FC<PropsWithChildren> = ({ children }) => {
   const muiTheme = useThemeSelector(lightTheme, darkTheme);
 
   return (
-    <body className={`theme-${theme} ${theme}`}>
+    <body className={`theme-${theme} ${theme} text-primary`}>
       <ThemeProvider theme={muiTheme}>
-        <Box className="w-screen h-screen flex flex-col">
+        <Box className="size-full h-screen flex flex-col">
           {deviceType === "PC" ? <PCHeader /> : <MobileHeader />}
-          <Box className="flex-grow">{children}</Box>
+          <Box className="flex-grow bg-primary">{children}</Box>
           {deviceType === "Mobile" && <QuickDial />}
         </Box>
         <QQDialog

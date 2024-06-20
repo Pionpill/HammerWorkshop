@@ -1,4 +1,5 @@
 import CosImage from "@/components/common/CosImage";
+import useHeaderStore from "@/hook/store/useHeaderStore";
 import useThemeStore, { useThemeSelector } from "@/hook/store/useThemeStore";
 import { Box, Drawer, IconButton } from "@mui/material";
 import { useState } from "react";
@@ -10,6 +11,7 @@ import UserDrawer from "./components/UserDrawer";
 const MobileHeader: React.FC = () => {
   const themeIcon = useThemeSelector(<BiSun color="white" />, <BiMoon color="white" />);
   const switchTheme = useThemeStore((state) => state.switchTheme);
+  const logoUrl = useHeaderStore((state) => state.logo);
 
   const [openMenu, setOpenMenu] = useState(false);
   const toggleMenu = (open?: boolean) => setOpenMenu(open !== undefined ? !!open : !openMenu);
@@ -22,7 +24,7 @@ const MobileHeader: React.FC = () => {
         <IconButton size="small" onClick={() => toggleMenu()}>
           <AiOutlineMenuUnfold color="white" />
         </IconButton>
-        <CosImage src="common/imgs/logo.png" alt="HammerWorkshop logo" width="100" height="20" loading="eager" />
+        <CosImage src={logoUrl} alt="HammerWorkshop logo" width="100" height="20" />
         <Box className="flex gap-1">
           <IconButton size="small" onClick={() => switchTheme()}>
             {themeIcon}

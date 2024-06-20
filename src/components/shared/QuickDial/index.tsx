@@ -1,4 +1,5 @@
 "use client";
+import useSpeedDialStore from "@/hook/store/useSpeedDialStore";
 import useThemeStore, { useThemeSelector } from "@/hook/store/useThemeStore";
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from "@mui/material";
 import { BsFillMoonStarsFill, BsFillSunFill, BsLink45Deg } from "react-icons/bs";
@@ -6,6 +7,8 @@ import { BsFillMoonStarsFill, BsFillSunFill, BsLink45Deg } from "react-icons/bs"
 const QuickDial: React.FC = () => {
   const themeIcon = useThemeSelector(<BsFillSunFill />, <BsFillMoonStarsFill />);
   const switchTheme = useThemeStore((state) => state.switchTheme);
+  const open = useSpeedDialStore((state) => state.show);
+
   const copyLink = () => {
     const url = globalThis.location.href;
     navigator.clipboard.writeText(url);
@@ -20,7 +23,7 @@ const QuickDial: React.FC = () => {
   const quickDialActions = commonQuickDialActions;
 
   return (
-    <SpeedDial sx={{ position: "absolute", bottom: 80, right: 16 }} ariaLabel="快捷操作" icon={<SpeedDialIcon />}>
+    <SpeedDial className="absolute bottom-20 right-4" hidden={!open} ariaLabel="快捷操作" icon={<SpeedDialIcon />}>
       {quickDialActions.map((action) => (
         <SpeedDialAction
           key={action.name}

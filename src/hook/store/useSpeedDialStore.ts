@@ -14,7 +14,7 @@ type SpeedDialAction = {
 
 /** speedDial 钩子 */
 const useSpeedDialStore = create<SpeedDialState & SpeedDialAction>((set) => ({
-  show: true,
+  show: false,
   open: () => set(() => ({ show: true })),
   close: () => set(() => ({ show: false })),
 }));

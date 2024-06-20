@@ -17,7 +17,7 @@ const MenuDrawer: React.FC = () => {
       name: "前往项目",
       value: "github",
       icon: <BsGithub size="18" />,
-      onClick: () => (globalThis.location.href = "https://github.com/Pionpill/HammerWorkshop"),
+      onClick: () => window.open("https://github.com/Pionpill/HammerWorkshop"),
     },
     {
       name: "加入我们",
