@@ -11,7 +11,7 @@ import {
 } from "react-icons/md";
 
 // 一级路由
-type PrimaryUrl = "/" | "/addon" | "/blog" | "/develop";
+type PrimaryUrl = "/" | "/addon" | "/wiki" | "/develop";
 
 export const navigationConfig: Array<{
   name: string;
@@ -32,8 +32,8 @@ export const navigationConfig: Array<{
     activeIcon: <MdDashboard size="24" />,
   },
   {
-    name: "博客",
-    value: "/blog",
+    name: "文档",
+    value: "/wiki",
     defaultIcon: <MdOutlineBook size="24" />,
     activeIcon: <MdBook size="24" />,
   },
