@@ -1,4 +1,5 @@
 "use client";
+import FlexBox from "@/components/common/FlexBox";
 import GlobalSnackbarAlert from "@/components/shared/GlobalSnackbarAlert";
 import MobileHeader from "@/components/shared/Header/MobileHeader";
 import PCHeader from "@/components/shared/Header/PCHeader";
@@ -8,7 +9,7 @@ import useDeviceType from "@/hook/common/useDeviceType";
 import useThemeStore, { useThemeSelector } from "@/hook/store/useThemeStore";
 import { QQType } from "@/model/contact/QQContact";
 import { darkTheme, lightTheme } from "@/styles/theme";
-import { Box, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import { PropsWithChildren } from "react";
 
 const RootTemplate: React.FC<PropsWithChildren> = ({ children }) => {
@@ -19,11 +20,11 @@ const RootTemplate: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <body className={`theme-${theme} ${theme} text-primary`}>
       <ThemeProvider theme={muiTheme}>
-        <Box className="size-full h-screen flex flex-col">
+        <FlexBox className="size-full h-screen flex-col">
           {deviceType === "PC" ? <PCHeader /> : <MobileHeader />}
-          <Box className="flex-grow bg-primary">{children}</Box>
+          <FlexBox className="flex-grow bg-primary flex-1">{children}</FlexBox>
           {deviceType === "Mobile" && <QuickDial />}
-        </Box>
+        </FlexBox>
         <QQDialog
           contact={{
             id: 712936357,

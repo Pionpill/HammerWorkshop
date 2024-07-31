@@ -8,5 +8,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.tabWidth": 2,
   "editor.tabSize": 2,
-  "cSpell.words": ["Tencentqq"]
+  "cSpell.words": ["Tencentqq"],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

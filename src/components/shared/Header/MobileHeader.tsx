@@ -1,7 +1,8 @@
 import CosImage from "@/components/common/CosImage";
+import FlexBox from "@/components/common/FlexBox";
 import useHeaderStore from "@/hook/store/useHeaderStore";
 import useThemeStore, { useThemeSelector } from "@/hook/store/useThemeStore";
-import { Box, Drawer, IconButton } from "@mui/material";
+import { Drawer, IconButton } from "@mui/material";
 import { useState } from "react";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { BiMoon, BiPalette, BiSun } from "react-icons/bi";
@@ -20,20 +21,20 @@ const MobileHeader: React.FC = () => {
 
   return (
     <>
-      <Box className="h-12 flex justify-between items-center bg-slate-950 p-1 pl-4 pr-4">
+      <FlexBox className="sticky top-0 z-50 h-12 flex justify-between items-center bg-slate-950 p-1 pl-4 pr-4">
         <IconButton size="small" onClick={() => toggleMenu()}>
           <AiOutlineMenuUnfold color="white" />
         </IconButton>
         <CosImage src={logoUrl} alt="HammerWorkshop logo" width="100" height="20" />
-        <Box className="flex gap-1">
+        <FlexBox className="flex gap-1">
           <IconButton size="small" onClick={() => switchTheme()}>
             {themeIcon}
           </IconButton>
           <IconButton size="small" onClick={() => toggleUser()}>
             <BiPalette color="white" />
           </IconButton>
-        </Box>
-      </Box>
+        </FlexBox>
+      </FlexBox>
       <Drawer className="w-screen" open={openMenu} onClose={() => toggleMenu()}>
         <MenuDrawer />
       </Drawer>
