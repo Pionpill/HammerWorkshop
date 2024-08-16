@@ -46,7 +46,7 @@ const Home: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <FlexBox className={"flex-1 flex-col items-center overflow-hidden"}>
       <FlexBox className={"w-full justify-center bg-cover"} sx={{ background: bgImgStyle }}>
-        <FlexBox className={"p-8 h-full w-full max-w-7xl flex-wrap gap-16 backdrop-blur-sm sm:px-4 sm:py-16"}>
+        <FlexBox className={"p-6 h-full w-full max-w-7xl flex-wrap gap-16 backdrop-blur-sm sm:px-4 sm:py-16"}>
           <FlexBox className="flex-col gap-12 flex-1 basis-96 sm:py-12">
             <Typography>Hello 这里是</Typography>
             <HomeTitle>锤子工坊</HomeTitle>
