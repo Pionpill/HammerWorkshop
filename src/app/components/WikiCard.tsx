@@ -1,6 +1,7 @@
 import FlexBox from "@/components/common/FlexBox";
 import { Divider, Typography } from "@mui/material";
 import Link from "next/link";
+import { Fragment } from "react";
 import { FcEngineering, FcNightLandscape, FcOrgUnit } from "react-icons/fc";
 
 const WikiCard: React.FC = () => {
@@ -40,8 +41,8 @@ const WikiCard: React.FC = () => {
       <Divider sx={{ width: "calc(100% - 1rem)", height: "1px" }} />
 
       {listItems.map((item, index) => (
-        <>
-          <FlexBox className="flex-col items-start rounded-xl py-2 px-4 bg-zinc-100 dark:bg-zinc-800 gap-2 w-full ">
+        <Fragment key={item.title}>
+          <FlexBox className="flex-col items-start rounded-xl py-2 px-4 bg-zinc-100 dark:bg-zinc-800 gap-2 w-full">
             <FlexBox className="items-center gap-2">
               {item.icon}
               <Typography>{item.title}</Typography>
@@ -51,7 +52,7 @@ const WikiCard: React.FC = () => {
             </Typography>
           </FlexBox>
           {index !== listItems.length - 1 && <Divider sx={{ width: "calc(100% - 1rem)", height: "1px" }} />}
-        </>
+        </Fragment>
       ))}
     </FlexBox>
   );

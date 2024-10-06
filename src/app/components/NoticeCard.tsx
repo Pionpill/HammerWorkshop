@@ -18,7 +18,7 @@ const NoticeCard: React.FC<NoticeCardProps> = ({ title, context }) => {
       <Typography className="font-bold">{title}</Typography>
       <FlexBox className="flex-col">
         {realContext.map((item) => (
-          <Typography variant="caption" className="opacity-60 inline-block w-full">
+          <Typography key={item} variant="caption" className="opacity-60 inline-block w-full">
             {item}
           </Typography>
         ))}

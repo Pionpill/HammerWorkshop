@@ -28,7 +28,7 @@ const MemberCard: React.FC = () => {
     <FlexBox className="flex-col sm:max-w-72 sm:w-1/2 rounded-xl p-4 bg-zinc-100 dark:bg-zinc-800 gap-2">
       <Typography variant="caption">我们的成员</Typography>
       {members.map((item) => (
-        <FlexBox className={`gap-2 ${item.onClick && "cursor-pointer"}`} onClick={item.onClick}>
+        <FlexBox key={item.name} className={`gap-2 ${item.onClick && "cursor-pointer"}`} onClick={item.onClick}>
           {item.iconSrc ? (
             <FlexBox className="bg-zinc-200 dark:bg-zinc-700 w-10 h-10 rounded-md items-center justify-center">
               <Image src={item.iconSrc} alt={`${item.name} logo`} width="48" height="48" className="rounded-md" />

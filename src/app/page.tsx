@@ -74,7 +74,7 @@ const Home: React.FC<PropsWithChildren> = ({ children }) => {
             </FlexBox>
             <FlexBox className="gap-8 mt-8">
               {noticeInfos.map((info) => (
-                <NoticeCard title={info.title} context={info.context} />
+                <NoticeCard title={info.title} context={info.context} key={info.title} />
               ))}
             </FlexBox>
           </FlexBox>

@@ -35,6 +35,7 @@ const AsideMenu: React.FC = () => {
       <Tabs variant="fullWidth" textColor="inherit" value={activeTab} onChange={changeTab} className="min-h-9">
         {tabs.map((tab) => (
           <Tab
+            key={tab.value}
             {...tab}
             className="min-h-9 p-0"
             sx={{
