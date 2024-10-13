@@ -2,7 +2,7 @@
 import { Typography } from "@mui/material";
 import { PropsWithChildren } from "react";
 
-const Ecology: React.FC<PropsWithChildren> = ({ children }) => {
+const EcologyPage: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Typography>Ecology</Typography>
@@ -10,4 +10,4 @@ const Ecology: React.FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export default Ecology;
+export default EcologyPage;
