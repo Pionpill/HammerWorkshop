@@ -10,7 +10,7 @@ import Link from "next/link";
 import { BiMoon, BiSun } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { RiDiscussFill, RiQqFill } from "react-icons/ri";
-import { navigationConfig } from "./common";
+import { navigationConfig } from "./constant";
 
 const PCHeader: React.FC = () => {
   const openQQGroup = useQQGroupDialogStore((state) => state.open);

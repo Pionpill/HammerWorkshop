@@ -1,16 +1,16 @@
 "use client";
 import FlexBox from "@/components/common/FlexBox";
-import GlobalSnackbarAlert from "@/components/shared/GlobalSnackbarAlert";
-import MobileHeader from "@/components/shared/Header/MobileHeader";
-import PCHeader from "@/components/shared/Header/PCHeader";
-import QuickDial from "@/components/shared/QuickDial";
-import QQDialog from "@/components/shared/dialog/QQDialog";
 import useDeviceType from "@/hook/common/useDeviceType";
 import useThemeStore, { useThemeSelector } from "@/hook/store/useThemeStore";
 import { QQType } from "@/model/contact/QQContact";
 import { darkTheme, lightTheme } from "@/styles/theme";
 import { ThemeProvider } from "@mui/material";
 import { PropsWithChildren } from "react";
+import GlobalSnackbarAlert from "./_components/GlobalSnackbarAlert";
+import MobileHeader from "./_components/header/MobileHeader";
+import PCHeader from "./_components/header/PCHeader";
+import QQDialog from "./_components/QQDialog";
+import QuickDial from "./_components/QuickDial";
 
 const RootTemplate: React.FC<PropsWithChildren> = ({ children }) => {
   const deviceType = useDeviceType();

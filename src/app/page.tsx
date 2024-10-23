@@ -3,16 +3,15 @@ import FlexBox from "@/components/common/FlexBox";
 import useQQGroupDialogStore from "@/hook/store/dialog/useQQGroupDialogStore";
 import { useThemeSelector } from "@/hook/store/useThemeStore";
 import { Button, Typography } from "@mui/material";
-
 import React, { PropsWithChildren } from "react";
 import { FaQq } from "react-icons/fa";
-import AddonCard from "./components/AddonCard";
-import GalleryCard from "./components/GalleryCard";
-import JoinCard from "./components/JoinCard";
-import MemberCard from "./components/MemberCard";
-import NoticeCard, { NoticeCardProps } from "./components/NoticeCard";
-import HomeTitle from "./components/RainbowTitle";
-import WikiCard from "./components/WikiCard";
+import AddonCard from "./_components/AddonCard";
+import GalleryCard from "./_components/GalleryCard";
+import JoinCard from "./_components/JoinCard";
+import MemberCard from "./_components/MemberCard";
+import NoticeCard, { NoticeCardProps } from "./_components/NoticeCard";
+import HomeTitle from "./_components/RainbowTitle";
+import WikiCard from "./_components/WikiCard";
 
 const Home: React.FC<PropsWithChildren> = ({ children }) => {
   const openQQGroup = useQQGroupDialogStore((state) => state.open);

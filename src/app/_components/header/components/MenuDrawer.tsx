@@ -6,7 +6,7 @@ import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import { RiDiscussFill } from "react-icons/ri";
 import { SiTencentqq } from "react-icons/si";
-import { navigationConfig } from "../common";
+import { navigationConfig } from "../constant";
 
 const MenuDrawer: React.FC = () => {
   const openQQGroup = useQQGroupDialogStore((state) => state.open);
