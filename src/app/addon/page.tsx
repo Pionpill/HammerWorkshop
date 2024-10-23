@@ -5,7 +5,6 @@ import Link from "next/link";
 import { AiFillGithub, AiFillQqCircle, AiOutlineDropbox } from "react-icons/ai";
 import { FaTemperatureLow } from "react-icons/fa";
 import { RiPlantFill } from "react-icons/ri";
-import main from "./temp";
 
 const AddonPage: React.FC = () => {
   const subSystems = [
@@ -28,8 +27,6 @@ const AddonPage: React.FC = () => {
       icon: AiOutlineDropbox,
     },
   ];
-
-  main();
 
   return (
     <FlexBox className="flex-col gap-12 my-6">
