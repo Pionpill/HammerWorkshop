@@ -3,7 +3,7 @@ import FlexBox from "@/components/common/FlexBox";
 import useDeviceType from "@/hook/common/useDeviceType";
 import useThemeStore, { useThemeSelector } from "@/hook/store/useThemeStore";
 import { QQType } from "@/model/contact/QQContact";
-import { darkTheme, lightTheme } from "@/styles/theme";
+import { darkTheme, lightTheme } from "@/styles/theme.style";
 import { ThemeProvider } from "@mui/material";
 import { PropsWithChildren } from "react";
 import GlobalSnackbarAlert from "./_components/GlobalSnackbarAlert";

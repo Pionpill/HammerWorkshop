@@ -1,5 +1,5 @@
 "use client";
-import { commonTheme } from "@/styles/theme";
+import { commonTheme } from "@/styles/theme.style";
 import { useLayoutEffect, useState } from "react";
 
 /** 设备类型，目前只支持 PC 和 Mobile */

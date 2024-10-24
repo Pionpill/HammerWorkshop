@@ -4,7 +4,7 @@ import useQQChannelDialogStore from "@/hook/store/dialog/useQQChannelDialogStore
 import useQQGroupDialogStore from "@/hook/store/dialog/useQQGroupDialogStore";
 import useSnackbarAlert from "@/hook/store/useGlobalSnackbar";
 import QQContact, { QQType } from "@/model/contact/QQContact";
-import { globalUtils } from "@/utils/global";
+import { globalUtils } from "@/utils/global.utils";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import { AiFillQqCircle, AiOutlineCopy } from "react-icons/ai";
