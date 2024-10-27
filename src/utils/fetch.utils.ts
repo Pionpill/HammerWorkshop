@@ -15,10 +15,5 @@ export const fetchGet = <T>(url: string, params?: Record<string, any>, requestIn
 export const fetchGetMongo = <T>(url: string, params?: Record<string, any>, requestInit?: RequestInit) => {
   return fetchGet<NextResponse<ResponseData<T>> | NextResponse<ErrorResponseData>>(url, params, requestInit)
     .then((response) => response.json())
-    .then((json: ResponseData<T> | ErrorResponseData) => {
-      if (!json.success) {
-        Promise.reject(MONGODB_API_ERROR);
-      }
-      return json;
-    });
+    .then((json: ResponseData<T> | ErrorResponseData) => (!json.success ? Promise.reject(MONGODB_API_ERROR) : json));
 };
