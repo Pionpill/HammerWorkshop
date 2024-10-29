@@ -6,6 +6,7 @@ const EcologyPage: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Typography>Ecology</Typography>
+      {children}
     </>
   );
 };

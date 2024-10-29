@@ -13,7 +13,7 @@
     "@emotion/styled": "^11.11.5",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
-    "@mui/material": "next",
+    "@mui/material": "^6.1",
     "@next/mdx": "^14.2.4",
     "@react-three/drei": "^9.107.0",
     "@react-three/fiber": "^8.16.1",

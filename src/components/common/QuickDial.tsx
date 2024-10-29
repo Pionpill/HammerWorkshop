@@ -3,22 +3,23 @@ import useThemeStore, { useThemeSelector } from "@/hook/store/useThemeStore";
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from "@mui/material";
 import { useMemo } from "react";
 import { IconType } from "react-icons";
-import { BsFillMoonStarsFill, BsFillSunFill, BsLink45Deg } from "react-icons/bs";
+import { BiLink } from "react-icons/bi";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 
-export type SpeedDialOperation = {
+export type QuickDialOperation = {
   label: string;
   Icon: IconType;
-  handleClick: (e?: MouseEvent) => void;
+  handleClick: () => void;
 };
 
 type QuickDialProps = {
-  extraOperations?: SpeedDialOperation[];
+  extraOperations?: QuickDialOperation[];
   useDefaultOperations?: boolean;
   className?: string;
 };
 
 const QuickDial: React.FC<QuickDialProps> = (props) => {
-  const { className, extraOperations, useDefaultOperations } = props;
+  const { className, extraOperations = [], useDefaultOperations = true } = props;
 
   const themeIcon = useThemeSelector(BsFillSunFill, BsFillMoonStarsFill);
   const switchTheme = useThemeStore((state) => state.switchTheme);
@@ -29,26 +30,22 @@ const QuickDial: React.FC<QuickDialProps> = (props) => {
   };
 
   const operations = useMemo(() => {
-    const defaultOperations: SpeedDialOperation[] = [
+    const defaultOperations: QuickDialOperation[] = [
       { Icon: themeIcon, label: "主题色", handleClick: () => switchTheme() },
-      { Icon: BsLink45Deg, label: "复制链接", handleClick: () => copyLink() },
+      { Icon: BiLink, label: "复制链接", handleClick: () => copyLink() },
     ];
-    return useDefaultOperations
-      ? extraOperations
-        ? [...defaultOperations, ...extraOperations]
-        : defaultOperations
-      : extraOperations || [];
+    return useDefaultOperations ? [...defaultOperations, ...extraOperations] : extraOperations;
   }, [useDefaultOperations, extraOperations]);
 
   return (
-    <SpeedDial className={`absolute bottom-20 right-4 ${className}`} ariaLabel="快捷操作" icon={<SpeedDialIcon />}>
+    <SpeedDial className={`absolute bottom-6 right-6 ${className}`} ariaLabel="快捷操作" icon={<SpeedDialIcon />}>
       {operations.map((action) => (
         <SpeedDialAction
           key={action.label}
           icon={<action.Icon />}
           tooltipOpen
           tooltipTitle={action.label}
-          onClick={(e) => action.handleClick}
+          onClick={action.handleClick}
         />
       ))}
     </SpeedDial>
