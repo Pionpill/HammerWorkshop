@@ -10,7 +10,6 @@ import GlobalSnackbarAlert from "./_components/GlobalSnackbarAlert";
 import MobileHeader from "./_components/header/MobileHeader";
 import PCHeader from "./_components/header/PCHeader";
 import QQDialog from "./_components/QQDialog";
-import QuickDial from "./_components/QuickDial";
 
 const RootTemplate: React.FC<PropsWithChildren> = ({ children }) => {
   const deviceType = useDeviceType();
@@ -23,7 +22,6 @@ const RootTemplate: React.FC<PropsWithChildren> = ({ children }) => {
         <FlexBox className="size-full h-screen flex-col">
           {deviceType === "PC" ? <PCHeader /> : <MobileHeader />}
           <FlexBox className="flex-grow bg-primary flex-1">{children}</FlexBox>
-          {deviceType === "Mobile" && <QuickDial />}
         </FlexBox>
         <QQDialog
           contact={{
